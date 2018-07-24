@@ -73,9 +73,7 @@ $(function() {
      * Ensures that the feed has loaded
      */
     beforeEach(function(done) {
-      loadFeed(0, function() {
-        done();
-      });
+      loadFeed(0, done);
     });
 
      /* Ensures when the loadFeed
@@ -102,9 +100,9 @@ $(function() {
      */
       beforeEach(function(done) {
       loadFeed(0, function() {
-        firstItem = document.querySelector('.feed :first-child');
+        firstItem = document.querySelector('.feed').innerHTML;
         loadFeed(1, function() {
-          secondItem = document.querySelector('.feed :nth-child(2)');
+          secondItem = document.querySelector('.feed').innerHTML;
           done();
         });
       });
